@@ -1,8 +1,15 @@
 import {useEffect, useState} from 'react'
 import axios from 'axios'
-import './styles.css'
 
-
+import {
+    Title,
+    Tabela,
+    Dado,
+    MP,
+    Data,
+    Form,
+    Head
+} from './styles.js'
 const StockMP = () => {
 
     const [mps, setMps] = useState([])
@@ -18,57 +25,128 @@ const StockMP = () => {
     
     
     return (
-        <div className='Tabela'>
-            <h2>Materias Primas</h2>
-            <div className='Title'>
-                <div className='Dado'>
+        <Form>
+        <Tabela>
+            <Head>
+            <h1>Wolfer</h1>
+            <h2>Estoque materia prima</h2>
+            </Head>
+            <Title>
+                <Dado>
                     <h5>Codigo</h5>
-                 </div>
-                <div className='Dado'>
+                 </Dado>
+                <Dado>
                     <h5>NCM</h5>
-                 </div>
-                <div className='Dado'>
+                 </Dado>
+                <Dado>
                     <h5>CFOP</h5>
-                 </div>
-                <div className='Dado'>
+                 </Dado>
+                <Dado>
                     <h5>SCT</h5>
-                 </div>
-                <div className='Dado'>
+                 </Dado>
+                <Dado>
                     <h5>Descrição</h5>
-                 </div>
-                <div className='Dado'>
+                 </Dado>
+                <Dado>
                     <h5>Tipo</h5>
-                 </div>
-                <div className='Dado'>
+                 </Dado>
+                <Dado>
                     <h5>Valor Compra</h5>
-                 </div>
-                <div className='Dado'>
+                 </Dado>
+                <Dado>
                     <h5>Valor Venda</h5>
-                 </div>
-                <div className='Dado'>
+                 </Dado>
+                <Dado>
                     <h5>Quantidade</h5>
-                 </div>
-            </div>
+                 </Dado>
+            </Title>
+        
 
             {mps.map((mp)=> {
                 return(
-                    <div className='MP'>
-                    <div className='Data'>{mp.codigo}</div>
-                    <div className='Data'>{mp.ncm}</div>
-                    <div className='Data'>{mp.cfop}</div>
-                    <div className='Data'>{mp.sct}</div>
-                    <div className='Data'>{mp.descricao}</div>
-                    <div className='Data'>{mp.tipo}</div>
-                    <div className='Data'>{mp.valor_compra}</div>
-                    <div className='Data'>{mp.valor_venda}</div>
-                    <div className='Data'>{mp.quantidade}</div>
-                    </div>
+                    <MP>
+                    <Data>{mp.codigo}</Data>
+                    <Data>{mp.ncm}</Data>
+                    <Data>{mp.cfop}</Data>
+                    <Data>{mp.sct}</Data>
+                    <Data>{mp.descricao}</Data>
+                    <Data>{mp.tipo}</Data>
+                    <Data>{mp.valor_compra}</Data>
+                    <Data>{mp.valor_venda}</Data>
+                    <Data>{mp.quantidade}</Data>
+                    
+                    </MP>
                 )
 
             })}
-            
-            
-        </div>
+            {mps.map((mp)=> {
+                return(
+                    <MP>
+                    <Data>{mp.codigo}</Data>
+                    <Data>{mp.ncm}</Data>
+                    <Data>{mp.cfop}</Data>
+                    <Data>{mp.sct}</Data>
+                    <Data>{mp.descricao}</Data>
+                    <Data>{mp.tipo}</Data>
+                    <Data>{mp.valor_compra}</Data>
+                    <Data>{mp.valor_venda}</Data>
+                    <Data>{mp.quantidade}</Data>
+                    
+                    </MP>
+                )
+
+            })}
+            {mps.map((mp)=> {
+                return(
+                    <MP>
+                    <Data>{mp.codigo}</Data>
+                    <Data>{mp.ncm}</Data>
+                    <Data>{mp.cfop}</Data>
+                    <Data>{mp.sct}</Data>
+                    <Data>{mp.descricao}</Data>
+                    <Data>{mp.tipo}</Data>
+                    <Data>{mp.valor_compra}</Data>
+                    <Data>{mp.valor_venda}</Data>
+                    <Data>{mp.quantidade}</Data>
+                    
+                    </MP>
+                )
+
+            })}{mps.map((mp)=> {
+                return(
+                    <MP>
+                    <Data>{mp.codigo}</Data>
+                    <Data>{mp.ncm}</Data>
+                    <Data>{mp.cfop}</Data>
+                    <Data>{mp.sct}</Data>
+                    <Data>{mp.descricao}</Data>
+                    <Data>{mp.tipo}</Data>
+                    <Data>{mp.valor_compra}</Data>
+                    <Data>{mp.valor_venda}</Data>
+                    <Data>{mp.quantidade}</Data>
+                    
+                    </MP>
+                )
+
+            })}{mps.map((mp)=> {
+                return(
+                    <MP>
+                    <Data>{mp.codigo}</Data>
+                    <Data>{mp.ncm}</Data>
+                    <Data>{mp.cfop}</Data>
+                    <Data>{mp.sct}</Data>
+                    <Data>{mp.descricao}</Data>
+                    <Data>{mp.tipo}</Data>
+                    <Data>{mp.valor_compra}</Data>
+                    <Data>{mp.valor_venda}</Data>
+                    <Data>{mp.quantidade}</Data>
+                    
+                    </MP>
+                )
+
+            })}
+        </Tabela>
+        </Form>
     )
 }
 

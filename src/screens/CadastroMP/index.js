@@ -1,6 +1,15 @@
 import {useState} from 'react'
-import './styles.css'
 import axios from 'axios'
+
+import {
+    Form,
+    Input,
+    Button,
+    Container,
+    Column,
+    Row,
+    Label
+} from './styles'
 
 const AddMP = () => {
 
@@ -34,43 +43,52 @@ const AddMP = () => {
     }
 
     return (
-        <div>
-            <form className='form'> 
-                <h2 style={{color:'grey'}}>Cadastro Materia Prima</h2>
-                <label>Codigo</label>
-                <input className='input' minLength={4} maxLength={4} onChange={(e)=>{setCodigo(e.target.value)}} ></input>
+        <Container>
+            <Form> 
+                <h1 style={{color:'white', fontWeight:'bold'}}>Wolfer</h1>
+                <h2 style={{color:'white', fontWeight:'bold'}}>Cadastro Materia Prima</h2>
+            <Row>
+            <Column>
+                <Label>Codigo</Label>
+                <Input minLength={4} maxLength={4} onChange={(e)=>{setCodigo(e.target.value)}} placeholder=' ex: 1111'></Input>
 
-                <label>NCM</label>
-                <input className='input' minLength={8} maxLength={8} onChange={(e)=>{setNcm(e.target.value)}}></input>
+                <Label>NCM</Label>
+                <Input  minLength={8} maxLength={8} onChange={(e)=>{setNcm(e.target.value)}} placeholder=' ex: 2222 3333'></Input>
 
-                <label>CPOF</label>
-                <input className='input' minLength={4} maxLength={4} onChange={(e)=>{setCfop(e.target.value)}}></input>
+                <Label>CPOF</Label>
+                <Input  minLength={4} maxLength={4} onChange={(e)=>{setCfop(e.target.value)}} placeholder=' ex: 4444'></Input>
 
-                <label>SCT</label>
-                <input className='input' minLength={3} maxLength={3} onChange={(e)=>{setSct(e.target.value)}}></input>
+                <Label>SCT</Label>
+                <Input  minLength={3} maxLength={3} onChange={(e)=>{setSct(e.target.value)}} placeholder=' ex: 555'></Input>
+           
+                <Label>Descricao</Label>
+                <Input onChange={(e)=>{setDescricao(e.target.value)}} placeholder=' ex: ???? mudar ???'></Input>
+            </Column>
 
-                <label>Descricao</label>
-                <input className='input'onChange={(e)=>{setDescricao(e.target.value)}}></input>
+            <Column>
 
-                <label>Unidade de medida</label>
-                <input className='input' onChange={(e)=>{setUnid(e.target.value)}}></input>
+                <Label>Unidade de medida</Label>
+                <Input  onChange={(e)=>{setUnid(e.target.value)}} placeholder=' ex: un'></Input>
 
-                <label>Tipo</label>
-                <input className='input' onChange={(e)=>{setTipo(e.target.value)}}></input>
-
-                <label>Valor de compra</label>
-                <input className='input' onChange={(e)=>{setValorCompra(e.target.value)}}></input>
+                <Label>Tipo</Label>
+                <Input  onChange={(e)=>{setTipo(e.target.value)}} placeholder=' ex: Parafuso'></Input>
+            
+                <Label>Valor de compra</Label>
+                <Input  onChange={(e)=>{setValorCompra(e.target.value)}} placeholder=' ex: 10.55'></Input>
                 
-                <label>Valor de venda</label>
-                <input className='input'onChange={(e)=>{setvalorVenda(e.target.value)}}></input>
+                <Label>Valor de venda</Label>
+                <Input onChange={(e)=>{setvalorVenda(e.target.value)}} placeholder=' ex: 10.55'></Input>
 
-                <label>Quantidade</label>
-                <input className='input' onChange={(e)=>{setQuantidade(e.target.value)}}></input>
+                <Label>Quantidade</Label>
+                <Input  onChange={(e)=>{setQuantidade(e.target.value)}} placeholder=' ex: 20'></Input>
 
-                <button className='button' onClick={onSubmit}>Cadastrar</button>
-
-            </form>
-        </div>
+                
+              </Column>
+              
+             </Row>
+             <Button className='button' onClick={onSubmit}>Cadastrar</Button>
+            </Form>
+        </Container>
     );
   }
   

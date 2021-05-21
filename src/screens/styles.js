@@ -1,6 +1,6 @@
+import styled from 'styled-components'
 
-
-.container {
+export const Container = styled.div `
     display:flex;
     position: absolute;
     top:0;
@@ -8,11 +8,10 @@
     flex-direction: row;
     height: 100%;
     width: calc(100% - 209px);
-    background-color: rgb(70, 69, 69);
-    
-}
+    background-color:white;
 
-.navbar {
+`
+export const Navbar = styled.div`
     position: fixed;
     top:0;
     left: 0;
@@ -20,17 +19,22 @@
     flex-direction: column;
     width: 209px;
     height: 100%;
-    background-color: rgb(18, 19, 19);
-}
+    background-color: #01939A;
+`
 
-.navItem{
+export const NavItem = styled.div`
     display:flex;
     width:100%;
     height:52px;
     border-top:1px solidrgb(70, 69, 69);
     border-bottom:1px solid rgb(70, 69, 69);
+
+    :first-child{
+        border-top:1px solid rgb(70, 69, 69);
+    }
     align-items: center;
     cursor: pointer;
-    color:azure;
+    color:rgb(10, 125, 163);
+    font-weight:bold;
 
-}
+`
