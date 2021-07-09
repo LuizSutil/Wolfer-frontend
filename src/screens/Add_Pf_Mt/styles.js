@@ -60,7 +60,7 @@ export const Head = styled.div`
 export const Table = styled.div`
     display:flex;
     flex-direction:column;
-    width:350px;
+    width: 46%;
     height: 500px;
     border-width:2px;
     border-style: solid;
@@ -163,7 +163,7 @@ export const Items = styled.div`
 export const Button = styled.button`
     margin-left:60px;
 `
-export const ValorFinal = styled.div`
+export const DivButton = styled.div`
     display:flex;
     flex-direction:row;
     width:500px;

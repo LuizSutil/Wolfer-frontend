@@ -12,13 +12,15 @@ export const Container = styled.div`
 export const Form = styled.div`
     display:flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items:center;
     height: 660px;
     width: 1251px;
     box-shadow: 0 0 1em black;
     background-color:  #01939A;
     border-radius: 15px;
+    margin-left: 50px;
+    margin-top:25px;
+    text-align:center;
 
     h1{
         margin-bottom:0px;

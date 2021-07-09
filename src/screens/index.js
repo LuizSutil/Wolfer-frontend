@@ -4,6 +4,7 @@ import CadastroPF from './CadastroPF'
 import StockMP from './StockMP'
 import StockPF from './StockPF'
 import ReqPF from './ReqPF'
+import Add_Pf_Mt from './Add_Pf_Mt'
 
 import {
     Container,
@@ -61,7 +62,7 @@ function App() {
                 {(pagina === 2) ? <StockMP/> : null}
                 {(pagina === 3) ? <StockPF/> : null}
                 {(pagina === 4) ? <ReqPF/> : null}
-                {(pagina === 5) ? <div/> : null}
+                {(pagina === 5) ? <Add_Pf_Mt/> : null}
             </Container>
         </div>
     );

@@ -23,12 +23,11 @@ export const Navbar = styled.div`
 `
 
 export const NavItem = styled.div`
+    
     display:flex;
     width:100%;
     height:52px;
-    border-top:1px solidrgb(70, 69, 69);
-    border-bottom:1px solid rgb(70, 69, 69);
-
+    
     :first-child{
         border-top:1px solid rgb(70, 69, 69);
     }
@@ -37,4 +36,8 @@ export const NavItem = styled.div`
     color:rgb(10, 125, 163);
     font-weight:bold;
 
+    :hover {
+        background-color: blue;
+    }
+ 
 `

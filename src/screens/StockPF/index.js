@@ -11,12 +11,13 @@ import {
     Form,
     Head
 } from './styles.js'
+import { Container } from '../Add_Pf_Mt/styles.js'
 const StockMP = () => {
 
     const [mps, setMps] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:3000/pf/catalogue/all')
+        axios.get('http://localhost:8080/pf/catalogue/all')
         .then(res => {
             setMps(res.data)
             console.log(mps)
@@ -26,11 +27,12 @@ const StockMP = () => {
     
     
     return (
+        <Container>
         <Form>
         <Tabela>
             <Head>
             <h1>Wolfer</h1>
-            <h2>Estoque materia prima</h2>
+            <h2>Estoque Produto Final</h2>
             </Head>
             <Title>
                 <Dado>
@@ -82,6 +84,7 @@ const StockMP = () => {
             })}
         </Tabela>
         </Form>
+        </Container>
     )
 }
 

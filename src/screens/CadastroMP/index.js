@@ -26,7 +26,7 @@ const AddMP = () => {
 
 
     const onSubmit = () => {
-        axios.post('http://localhost:3000/mp/create', {
+        axios.post('http://localhost:8080/mp/create', {
             codigo:`${codigo}`,
             ncm: `${ncm}`,
             cfop: `${cfop}`,

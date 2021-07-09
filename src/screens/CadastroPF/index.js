@@ -25,7 +25,7 @@ const AddPF = () => {
 
 
     const onSubmit = () => {
-        axios.post('http://localhost:3000/pf/create', {
+        axios.post('http://localhost:8080/pf/create', {
             codigo:`${codigo}`,
             ncm: `${ncm}`,
             cfop: `${cfop}`,

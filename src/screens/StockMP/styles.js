@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
+export const Container = styled.div`
+    display:flex;
+    margin:auto;
+    border-radius: 15px;
+
+`
+
 export const Title = styled.div`
     display: flex;
     flex-direction: row;
