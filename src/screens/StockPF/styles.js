@@ -1,41 +1,59 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    display:flex;
-    margin:auto;
-    border-radius: 15px;
+    display:flex;   
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 100%;
 
 `
 
 export const Title = styled.div`
     display: flex;
+    justify-content: center;
     flex-direction: row;
     width:100%;
     height: 30px;
 `
-export const Form = styled.div `   
+
+export const Form = styled.div `
     display:flex;
     flex-direction: column;
     align-items:center;
-    height: 660px;
-    width: 1251px;
-    box-shadow: 0 0 1em black;
     background-color:  #01939A;
-    border-radius: 15px;
-    margin-left: 50px;
-    margin-top:25px;
     text-align:center;
     overflow-y: scroll;
+    overflow-x: scroll;
+    width: 100%;
+
+    padding-bottom: 25px;
+
+
+    ::-webkit-scrollbar-track {
+        background-color: #F4F4F4;
+    }
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        background: #F4F4F4;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #dad7d7;
+    }
 `
 
-export const Tabela = styled.div`
+export const Tabela = styled.table`
     display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     flex-direction: column;
-    background-color:none;
 `
 
 export const Head = styled.div`
-
+    margin-top: 25px;
+    margin-bottom: 25px;
     color:white;
     h1{
         font-size:48px;
@@ -58,11 +76,24 @@ export const Dado = styled.div`
     border-color:#106C6E;
     border-width: 1px;
     color:white;
+    
+    text-indent: 3px;
+    
+    :first-child{
+        border-radius: 5px 0 0 0;
+    }
+
+    :last-child{
+        border-radius: 0 5px 0 0;
+    }
+    
 `
 
 export const MP = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    width: 600px;
 `
 
 export const Data = styled.div`
@@ -71,9 +102,21 @@ export const Data = styled.div`
     min-width: 130px;
     border-style: solid;
     border-width: 1px;
+    border-top: 0;
     border-color:#106C6E;
     color:white;
+    height: 30px;
 
+    max-width: 15ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    text-indent: 3px;
+    
+    text-transform: capitalize;
+
+    
     :first-child{
         border-left: 0;
     }

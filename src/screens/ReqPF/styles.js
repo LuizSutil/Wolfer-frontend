@@ -1,39 +1,40 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    display:flex;
-    margin:auto;
-    border-radius: 15px;
+    display:flex;   
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 100%;
 
 `
 
 export const Form = styled.div `   
     display:flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    align-items:center;
-    height: 660px;
-    width: 1251px;
-    box-shadow: 0 0 1em black;
+    width: 100%;
     background-color:  #01939A;
-    border-radius: 15px;
-    margin-left: 50px;
-    margin-top:25px;
+    color:white;
+
     text-align:center;
-`
+    
+    `
 
 export const Title = styled.div`
-    display: flex;
-    flex-direction: column;
-    width:100%;
-    height: 30px;
+
     color:white;
     align-items:center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
     h1{
         font-size:48px;
         margin-top:0px;
         margin-bottom:0px;
     }
-
+    
     h2{
         font-size:26px;
         margin-top:-10px;
@@ -43,32 +44,59 @@ export const Title = styled.div`
 
 export const Body = styled.div`
     display:flex;
-    flex-direction:row;
-    justify-content: space-evenly;
-    width:100%;
-    height:100%;
-`
-
-export const Head = styled.div`
-    display:flex;
-    flex-direction:row;
-    justify-content: space-between;
-    width:72%;
-    height:100%;
-`
-
-export const Table = styled.div`
-    display:flex;
-    flex-direction:column;
-    width:350px;
+    width: 95%;
     height: 500px;
+`
+
+export const Head = styled.thead`
+    display:flex;
+    flex-direction:row;
+    margin-top: 10px;
+
+`
+
+export const Table = styled.table`
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    width: 100%;
+    height: 100%;
     border-width:2px;
     border-style: solid;
     border-color:#106C6E;  
     border-radius:10px;
-    overflow-y:scroll;
-    border-right:0px none white;
-    align-items:center;
+    overflow-y:auto;
+
+    :first-child{
+
+        margin-right: 10px;
+
+    }
+
+    :last-child{ 
+
+        margin-left: 10px;
+
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #F4F4F4;
+        border-radius:10px;
+        border-radius: 0 30px 30px 0;
+
+    }
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        background: #F4F4F4;
+        border-radius: 0 30px 30px 0;
+
+
+
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #dad7d7;
+    }
 
     h4{
         margin-bottom:0px;
@@ -83,18 +111,19 @@ export const TableName = styled.div`
     display:flex;
     flex-direction:row;
     text-align:center;
-    width:100%;
     justify-content:center;
+    width:100%;
 
-    ::first-child{
+    :first-child{
         &:hover {
         background-color:none;
-        }
+    }
+    
     }
     &:hover {
         background-color:white;
         color: #106C6E;
-        }
+    }
    
 `
 
@@ -141,6 +170,7 @@ export const Items = styled.div`
     border: 1px solid white;
     border-right:none;
     border-left:none;
+    border-top: none;
     height:40px;
     vertical-align:center;
     cursor:pointer;
@@ -161,21 +191,44 @@ export const Items = styled.div`
 `
 
 export const Button = styled.button`
+    
     margin-left:60px;
+
 `
 export const ValorFinal = styled.div`
+   
     display:flex;
-    flex-direction:row;
-    width:500px;
-    justify-content:center;
+    justify-content: right;
+    flex-direction: row;
     align-items:center;
-    margin-top:470px;
-    justify-self:flex-end;
-    padding-left:60%;
 
     :first-child{
         margin-right:20px;
     }
 
+`
+
+export const Form2 = styled.form`
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    width: 95%;
+    height: 100%;
+    margin-top: 20px;
+
+`
+
+export const Input = styled.input`
+
+    width: 31%;
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 0;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
     
 `

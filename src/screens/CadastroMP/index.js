@@ -48,45 +48,48 @@ const AddMP = () => {
                 <h1 style={{color:'white', fontWeight:'bold'}}>Wolfer</h1>
                 <h2 style={{color:'white', fontWeight:'bold'}}>Cadastro Materia Prima</h2>
             <Row>
-            <Column>
-                <Label>Codigo</Label>
-                <Input minLength={4} maxLength={4} onChange={(e)=>{setCodigo(e.target.value)}} placeholder=' ex: 1111'></Input>
+                <Column>
+                    <Label>Codigo</Label>
+                    <Input minLength={4} maxLength={4} onChange={(e)=>{setCodigo(e.target.value)}} placeholder=' ex: 1111'></Input>
 
-                <Label>NCM</Label>
-                <Input  minLength={8} maxLength={8} onChange={(e)=>{setNcm(e.target.value)}} placeholder=' ex: 2222 3333'></Input>
+                    <Label>NCM</Label>
+                    <Input  minLength={8} maxLength={8} onChange={(e)=>{setNcm(e.target.value)}} placeholder=' ex: 2222 3333'></Input>
 
-                <Label>CPOF</Label>
-                <Input  minLength={4} maxLength={4} onChange={(e)=>{setCfop(e.target.value)}} placeholder=' ex: 4444'></Input>
+                    <Label>CPOF</Label>
+                    <Input  minLength={4} maxLength={4} onChange={(e)=>{setCfop(e.target.value)}} placeholder=' ex: 4444'></Input>
 
-                <Label>SCT</Label>
-                <Input  minLength={3} maxLength={3} onChange={(e)=>{setSct(e.target.value)}} placeholder=' ex: 555'></Input>
-           
-                <Label>Descricao</Label>
-                <Input onChange={(e)=>{setDescricao(e.target.value)}} placeholder=' ex: ???? mudar ???'></Input>
-            </Column>
-
-            <Column>
-
-                <Label>Unidade de medida</Label>
-                <Input  onChange={(e)=>{setUnid(e.target.value)}} placeholder=' ex: un'></Input>
-
-                <Label>Tipo</Label>
-                <Input  onChange={(e)=>{setTipo(e.target.value)}} placeholder=' ex: Parafuso'></Input>
+                    <Label>SCT</Label>
+                    <Input  minLength={3} maxLength={3} onChange={(e)=>{setSct(e.target.value)}} placeholder=' ex: 555'></Input>
             
-                <Label>Valor de compra</Label>
-                <Input  onChange={(e)=>{setValorCompra(e.target.value)}} placeholder=' ex: 10.55'></Input>
-                
-                <Label>Valor de venda</Label>
-                <Input onChange={(e)=>{setvalorVenda(e.target.value)}} placeholder=' ex: 10.55'></Input>
+                    <Label>Descricao</Label>
+                    <Input onChange={(e)=>{setDescricao(e.target.value)}} placeholder=' ex: ???? mudar ???'></Input>
+                </Column>
 
-                <Label>Quantidade</Label>
-                <Input  onChange={(e)=>{setQuantidade(e.target.value)}} placeholder=' ex: 20'></Input>
+                <Column>
 
+                    <Label>Unidade de medida</Label>
+                    <Input  onChange={(e)=>{setUnid(e.target.value)}} placeholder=' ex: un'></Input>
+
+                    <Label>Tipo</Label>
+                    <Input maxLength={10}  onChange={(e)=>{setTipo(e.target.value)}} placeholder=' ex: Parafuso'></Input>
                 
-              </Column>
+                    <Label>Valor de compra</Label>
+                    <Input  onChange={(e)=>{setValorCompra(e.target.value)}} placeholder=' ex: 10.55'></Input>
+                    
+                    <Label>Valor de venda</Label>
+                    <Input onChange={(e)=>{setvalorVenda(e.target.value)}} placeholder=' ex: 10.55'></Input>
+
+                    <Label>Quantidade</Label>
+                    <Input  onChange={(e)=>{setQuantidade(e.target.value)}} placeholder=' ex: 20'></Input>
+
+                    
+                </Column>
               
-             </Row>
-             <Button className='button' onClick={onSubmit}>Cadastrar</Button>
+
+            </Row>
+              <Row>
+                <Button className='button' onClick={onSubmit}>Cadastrar</Button>
+              </Row>
             </Form>
         </Container>
     );

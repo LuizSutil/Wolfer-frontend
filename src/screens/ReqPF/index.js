@@ -3,6 +3,7 @@ import axios from 'axios'
 
 
 import{
+    Container,
     Form,
     Title,
     Table,
@@ -13,9 +14,10 @@ import{
     Label,
     Items,
     Button,
-    ValorFinal
+    ValorFinal,
+    Form2,
+    Input
 } from './styles.js'
-import { Container } from '../CadastroMP/styles.js'
 
 
 
@@ -60,18 +62,16 @@ const ReqPF = () => {
     return (
         <Container>
         <Form>
-         <Title>
-          <h1>Wolfer</h1>
-           <h2>Ordem de Serviço</h2>
-
-           <Head>
-            <div>Produto Final</div>
-            <div>Matéria Prima</div>
-            <div>Adicionados</div>
-           </Head>
+            <Title>
+                <h1>Wolfer</h1>
+                <h2>Ordem de Serviço</h2>
+            </Title>
 
            <Body>
             <Table>
+
+            <Head>Produto Final</Head>
+
                 <TableHeading>
                     <Label>
                         Código
@@ -100,6 +100,8 @@ const ReqPF = () => {
 
              </Table>
             <Table>
+            <Head>Matéria Prima</Head>
+
                 <TableHeading>
                     <Label>
                         Código
@@ -129,6 +131,7 @@ const ReqPF = () => {
                  )}
              </Table>
             <Table>
+            <Head>Adicionados</Head>
                 <TableHeading>
                     <Label>
                         Código
@@ -160,17 +163,29 @@ const ReqPF = () => {
                  
                 
             </Table>
-                
-           </Body>
-           <ValorFinal>
-                 <h3>valor final: {x}</h3>
-                 
-                 <Button onClick={() => {console.log(valores)}}>Adicionar Ordem</Button>
-                
-                 </ValorFinal>
-         </Title>
 
+                
+            </Body>
+
+
+            <Form2>
+
+                <Input></Input>       
+                
+                <ValorFinal>
+
+                    <h3>valor final: {x}</h3>
+                    
+                    <Button onClick={() => {console.log(valores)}}>Adicionar Ordem</Button>
+                    
+                </ValorFinal>
+
+            </Form2>
+            
+            <Form2>
+            </Form2>
         </Form>
+
         </Container>
     )
 }

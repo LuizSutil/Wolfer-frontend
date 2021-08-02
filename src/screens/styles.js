@@ -1,43 +1,48 @@
 import styled from 'styled-components'
 
+export const Div = styled.div `
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    
+`
+
 export const Container = styled.div `
     display:flex;
-    position: absolute;
-    top:0;
-    left:209px;
-    flex-direction: row;
-    height: 100%;
+    align-items: center;
+    justify-content: center;
     width: calc(100% - 209px);
-    background-color:white;
-
+    margin-top: 6%;
 `
+
 export const Navbar = styled.div`
-    position: fixed;
-    top:0;
-    left: 0;
     display:flex;
     flex-direction: column;
     width: 209px;
-    height: 100%;
+    height: 100vmax;
     background-color: #01939A;
+    float: left;
 `
 
 export const NavItem = styled.div`
-    
     display:flex;
-    width:100%;
+    width: 100%;
     height:52px;
+    padding-left: 4px;
     
     :first-child{
         border-top:1px solid rgb(70, 69, 69);
     }
     align-items: center;
     cursor: pointer;
-    color:rgb(10, 125, 163);
+    color: white;
     font-weight:bold;
 
     :hover {
-        background-color: blue;
+        background-color: white;
+        color: #01939A;
     }
- 
+     
 `

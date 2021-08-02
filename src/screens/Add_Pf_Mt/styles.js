@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    display:flex;
-    margin:auto;
-    border-radius: 15px;
+    display:flex;   
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 95%;
 
 `
 
@@ -11,29 +13,30 @@ export const Form = styled.div `
     display:flex;
     flex-direction: column;
     align-items:center;
-    height: 660px;
-    width: 1251px;
-    box-shadow: 0 0 1em black;
+    width: 100%;
     background-color:  #01939A;
-    border-radius: 15px;
-    margin-left: 50px;
-    margin-top:25px;
+    color:white;
+
     text-align:center;
-`
+    
+    `
 
 export const Title = styled.div`
     display: flex;
     flex-direction: column;
-    width:100%;
-    height: 30px;
+    width: 100%;
     color:white;
     align-items:center;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
     h1{
         font-size:48px;
         margin-top:0px;
         margin-bottom:0px;
     }
-
+    
     h2{
         font-size:26px;
         margin-top:-10px;
@@ -45,30 +48,60 @@ export const Body = styled.div`
     display:flex;
     flex-direction:row;
     justify-content: space-evenly;
-    width:100%;
-    height:100%;
+    width: 95%;
+    height: 100%;
 `
 
-export const Head = styled.div`
+export const Head = styled.thead`
     display:flex;
     flex-direction:row;
     justify-content: space-between;
-    width:72%;
-    height:100%;
+    margin-top: 10px;
+
 `
 
-export const Table = styled.div`
+export const Table = styled.table`
     display:flex;
     flex-direction:column;
-    width: 46%;
-    height: 500px;
+    width: 100%;
+    height: 550px;
     border-width:2px;
     border-style: solid;
     border-color:#106C6E;  
     border-radius:10px;
-    overflow-y:scroll;
-    border-right:0px none white;
+    overflow-y:auto;
     align-items:center;
+
+    :first-child{
+
+        margin-right: 5px;
+    }
+
+    :last-child{ 
+
+        margin-left: 5px;
+
+    }
+    
+    margin-bottom: 10px;
+    
+    ::-webkit-scrollbar-track {
+        background-color: #F4F4F4;
+        border-radius:10px;
+
+    }
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        background: #F4F4F4;
+        border-radius: 0 10px 10px 0;
+
+
+
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #dad7d7;
+    }
 
     h4{
         margin-bottom:0px;
@@ -86,7 +119,7 @@ export const TableName = styled.div`
     width:100%;
     justify-content:center;
 
-    ::first-child{
+    :first-child{
         &:hover {
         background-color:none;
         }
@@ -141,6 +174,7 @@ export const Items = styled.div`
     border: 1px solid white;
     border-right:none;
     border-left:none;
+    border-top: none;
     height:40px;
     vertical-align:center;
     cursor:pointer;
@@ -165,13 +199,9 @@ export const Button = styled.button`
 `
 export const DivButton = styled.div`
     display:flex;
-    flex-direction:row;
-    width:500px;
     justify-content:center;
     align-items:center;
-    margin-top:470px;
-    justify-self:flex-end;
-    padding-left:60%;
+    width:500px;
 
     :first-child{
         margin-right:20px;

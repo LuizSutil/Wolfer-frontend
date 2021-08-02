@@ -6,15 +6,16 @@ import StockPF from './StockPF'
 import ReqPF from './ReqPF'
 import Add_Pf_Mt from './Add_Pf_Mt'
 
+
 import {
+    Div,
     Container,
     Navbar,
-    NavItem,
-
-
+    NavItem
 } from './styles.js'
 
 import wolfer from './wolfer.png'
+import Lista_pedidos from './lista_pedidos/index';
 
 function App() {
 
@@ -27,33 +28,23 @@ function App() {
 
     
     return (
-        <div>
+        <Div>
             <Navbar>
                 <img src={wolfer} alt='wolferLogo'></img>
-                <NavItem onClick={() => onAdd(0)} 
-                         style={{backgroundColor: (pagina === 0) ? "white" : '#01939A', 
-                         color: (pagina === 0) ? '#01939A' : "white"}}>
+                <NavItem onClick={() => onAdd(0)}>
                          Cadastro Materia Prima</NavItem>
-                <NavItem onClick={() => onAdd(1)} 
-                         style={{backgroundColor: (pagina === 1) ? "white" : '#01939A',
-                         color: (pagina === 1) ? '#01939A' : "white"}}>
+                <NavItem onClick={() => onAdd(1)}>
                          Cadastro Produto Final</NavItem>
-                <NavItem onClick={() => onAdd(2)} 
-                         style={{backgroundColor: (pagina === 2) ? "white" : '#01939A',
-                         color: (pagina === 2) ? '#01939A' : "white"}}>
+                <NavItem onClick={() => onAdd(2)}>
                          Estoque Materia Prima</NavItem>
-                <NavItem onClick={() => onAdd(3)} 
-                         style={{backgroundColor: (pagina === 3) ? "white" : '#01939A',
-                         color: (pagina === 3) ? '#01939A' : "white"}}>
+                <NavItem onClick={() => onAdd(3)}>
                          Estoque Produto Final</NavItem>
-                <NavItem onClick={() => onAdd(4)} 
-                         style={{backgroundColor: (pagina === 4) ? "white" : '#01939A',
-                         color: (pagina === 4) ? '#01939A' : "white"}}>
+                <NavItem onClick={() => onAdd(4)}>
                          Requisição Produto Final</NavItem>
-                <NavItem onClick={() => onAdd(5)} 
-                         style={{backgroundColor: (pagina === 5) ? "white" : '#01939A' ,
-                         color: (pagina === 5) ? '#01939A' : "white"}}>
+                <NavItem onClick={() => onAdd(5)}>
                         Add Materia prima à PF</NavItem>    
+                <NavItem onClick={() => onAdd(6)}>
+                        Lista de pedidos</NavItem>
             </Navbar>
 
             <Container>
@@ -63,8 +54,9 @@ function App() {
                 {(pagina === 3) ? <StockPF/> : null}
                 {(pagina === 4) ? <ReqPF/> : null}
                 {(pagina === 5) ? <Add_Pf_Mt/> : null}
+                {(pagina === 6) ? <Lista_pedidos/> : null}
             </Container>
-        </div>
+        </Div>
     );
   }
   

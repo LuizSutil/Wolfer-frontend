@@ -80,7 +80,10 @@ const AddPF = () => {
                 </Column>
 
             </Row>
-            <Button  onClick={onSubmit}>Cadastrar</Button>
+
+            <Row>
+                <Button  onClick={onSubmit}>Cadastrar</Button>
+            </Row>
 
             </Form>
 

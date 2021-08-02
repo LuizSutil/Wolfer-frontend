@@ -3,6 +3,7 @@ import axios from 'axios'
 
 
 import{
+    Container,
     Form,
     Title,
     Table,
@@ -16,7 +17,7 @@ import{
     DivButton
 
 } from './styles.js'
-import { Container } from '../CadastroMP/styles.js'
+
 
 
 
@@ -24,8 +25,8 @@ const ReqPF = () => {
 
     const [pfs, setPfs] = useState([])
     const [mps, setMps] = useState([])
-    const [mpAdd, setMpAdd] = useState()
-    const [pfAdd, setPfAdd] = useState()
+    const [mpAdd, setMpAdd] = useState([])
+    const [pfAdd, setPfAdd] = useState([])
 
 
     useEffect(() => {
@@ -49,103 +50,108 @@ const ReqPF = () => {
 
     const selectMp = (mp) => {
         console.log(mp)
-        setMpAdd(mp)
+        var temp = [...mpAdd]
+        temp.push(mp)
+        setMpAdd(temp)
+        
+    }
+
+    const teste = () => {
+        console.log('Array: ', mpAdd)
     }
 
     const postPf_Mp = (pfAdd, mpAdd) => {
-        console.log(mpAdd, pfAdd)
+        console.log('pf: ', mpAdd, 'mp: ', pfAdd)
 
         axios.post('http://localhost:8080/pf/add/mp',
         {pf: `${pfAdd}`,
-         mp: `${mpAdd}`  })
+        mp: JSON.stringify(mpAdd)  })
         .then(res => {})
+
     }
     
     
 
     return (
         <Container>
-        <Form>
-         <Title>
-          <h1>Wolfer</h1>
-           <h2>Ordem de Serviço</h2>
+            <Form>
+                <Title>
+                    <h1>Wolfer</h1>
+                    <h2>Ordem de Serviço</h2>
+                </Title>
+                <Body>
+                    <Table>
+                        <Head>Produto Final</Head>
+                        <TableHeading>
+                            <Label>
+                                Código
+                            </Label>
+                            <Label>
+                                Descrição
+                            </Label>
+                            <Label>
+                                V.Venda 
+                            </Label>
+                        </TableHeading>    
 
-           <Head>
-            <div>Produto Final</div>
-            <div>Matéria Prima</div>
-           </Head>
+                        {pfs.map((pf) => 
+                        <TableName onClick={() => {selectPf(pf.codigo)}}>
+                            <Items>
+                                {pf.codigo}
+                            </Items>
+                            <Items>
+                                {pf.descricao}
+                            </Items>
+                            <Items>
+                            {pf.valor_venda} 
+                            </Items>
+                        </TableName>
+                        )}
 
-           <Body>
-            <Table>
-                <TableHeading>
-                    <Label>
-                        Código
-                     </Label>
-                    <Label>
-                        Descrição
-                     </Label>
-                    <Label>
-                        V.Venda 
-                     </Label>
-                 </TableHeading>    
+                    </Table>
+                    <Table>
+                        <Head>Materia Prima</Head>
+                        <TableHeading>
+                            <Label>
+                                Código
+                            </Label>
+                            <Label>
+                                Descrição
+                            </Label>
+                            <Label>
+                                V.Compra 
+                            </Label>
+                        </TableHeading>   
 
-                {pfs.map((pf) => 
-                 <TableName onClick={() => {selectPf(pf.codigo)}}>
-                    <Items>
-                        {pf.codigo}
-                     </Items>
-                    <Items>
-                        {pf.descricao}
-                     </Items>
-                    <Items>
-                       {pf.valor_venda} 
-                     </Items>
-                 </TableName>
-                )}
+                    {mps.map((mp) => 
 
-             </Table>
-            <Table>
-                <TableHeading>
-                    <Label>
-                        Código
-                     </Label>
-                    <Label>
-                        Descrição
-                     </Label>
-                    <Label>
-                        V.Compra 
-                     </Label>
-                 </TableHeading>   
+                        
+                        <TableName onClick={() => {selectMp(mp.codigo)}}>
+                            <Items>
+                                {mp.codigo}
+                            </Items>
+                            <Items>
+                                {mp.descricao}
+                            </Items>
+                            <Items>
+                                {mp.valor_compra} 
+                            </Items>
+                        </TableName>
+                    )}
+                    </Table>
+                    
+                </Body>
 
-                 {mps.map((mp) => 
-
-                     
-                    <TableName onClick={() => {selectMp(mp.codigo)}}>
-                    <Items>
-                        {mp.codigo}
-                     </Items>
-                    <Items>
-                        {mp.descricao}
-                     </Items>
-                    <Items>
-                       {mp.valor_compra} 
-                     </Items>
-                 </TableName>
-                 )}
-             </Table>
                 
-           </Body>
-
-           <DivButton>
-                 <h3>Adicionar: </h3>
-                 
-                 <Button onClick={() => {postPf_Mp(pfAdd, mpAdd)}}>Adicionar Itens</Button>
                 
-            </DivButton>
 
-         </Title>
-
-        </Form>
+                <DivButton>
+                    <h3>Adicionar: </h3>
+                    
+                    <Button onClick={() => {postPf_Mp(pfAdd, mpAdd)}}>Adicionar Itens</Button>
+                    
+                </DivButton>
+            </Form>
         </Container>
     )
 }
