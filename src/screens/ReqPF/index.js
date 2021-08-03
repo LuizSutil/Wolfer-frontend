@@ -58,6 +58,9 @@ const ReqPF = () => {
         const newAdd = adds.filter((add) => add.id !== mp.id) 
         setAdds(newAdd)
     }
+
+    /*mandar newAdd e o produto final selecionado 
+      rc/create  */
     var x = 0;
     return (
         <Container>
