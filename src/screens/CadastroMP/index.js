@@ -37,7 +37,7 @@ const AddMP = () => {
             valor_compra: valorCompra, //integer or decimal
             valor_venda: valorVenda,
             quantidade: quantidade
-        })
+        })/*.then(setCodigo())*/
         
         
     }

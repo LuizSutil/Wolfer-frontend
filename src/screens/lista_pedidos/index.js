@@ -1,4 +1,5 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 
 import { 
@@ -20,65 +21,77 @@ import {
 
 
 const Lista_pedidos = () => {
+
+
+    const [pedidos, setPedidos] = useState([])
+    const [mps, setMps] = useState([])
+    
+    useEffect(() => {
+        axios.get('http://localhost:8080/rc/catalogue/all')
+        .then(res => {
+            setPedidos(res.data)
+            console.log(pedidos)
+        })
+    },[])
+
+    
+    
     return (
         <Container>
             <Body>
                 <Form>
-                    <Pedidos>
-
-                        <Data>
-                            
-                            <TitleProduct>teste</TitleProduct>
-                            
-                            <TableHeading>
-                                <Label>
-                                    Código
-                                </Label>
-                                <Label>
-                                    Descrição
-                                </Label>
-                                <Label>
-                                    V.Venda 
-                                </Label>
-                            </TableHeading>
-                            <TableName>
-                                <Items>
-                                    Código
-                                </Items>
-                                <Items>
-                                    Descrição
-                                </Items>
-                                <Items>
-                                    V.Venda 
-                                </Items>
-                            </TableName>
-                        </Data>
-
+                    {pedidos.map((pedido) => {
                         
-                        <Dados>
-                            <Descricao>Descrição: </Descricao>
-                        </Dados>
 
-                        
-                    </Pedidos>
-                    <Pedidos>
-                        <Dados>teste</Dados>
-                        <Dados>teste</Dados>
-                        <Dados>teste</Dados>
-                        <Dados>teste</Dados>
-                    </Pedidos>
-                    <Pedidos>
-                        <Dados>teste</Dados>
-                        <Dados>teste</Dados>
-                        <Dados>teste</Dados>
-                        <Dados>teste</Dados>
-                    </Pedidos>
-                    <Pedidos>
-                        <Dados>teste</Dados>
-                        <Dados>teste</Dados>
-                        <Dados>teste</Dados>
-                        <Dados>teste</Dados>
-                    </Pedidos>
+
+                        return(
+                            
+                            <Pedidos>
+
+                                <Data>
+                                    
+                                    <TitleProduct>teste</TitleProduct>
+                                    
+                                    <TableHeading>
+                                        <Label>
+                                            Código
+                                        </Label>
+                                        <Label>
+                                            Descrição
+                                        </Label>
+                                        <Label>
+                                            V.Venda 
+                                        </Label>
+                                    </TableHeading>
+                                    {pedido.matp.map((mp) => {
+                                        return(
+
+                                    <TableName >
+                                        <Items>
+                                            {mp.codigo}
+                                        </Items>
+                                        <Items>
+                                            {mp.descricao}
+                                        </Items>
+                                        <Items>
+                                            {mp.valor_venda} 
+                                        </Items>
+                                    </TableName>
+
+                                    )})}
+                                </Data>
+
+                                
+                                <Dados>
+                                    <Descricao>Descrição: {pedido.descricao}</Descricao>
+                                </Dados>
+
+                                
+                            </Pedidos>
+
+                        )})}
+
+                     
                 </Form>  
                            
             </Body>

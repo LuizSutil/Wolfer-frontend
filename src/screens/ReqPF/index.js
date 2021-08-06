@@ -28,6 +28,8 @@ const ReqPF = () => {
     const [adds, setAdds] = useState([])
     const [valores, setValores] = useState([])
     const [valorFinal, setValorFinal] = useState()
+    const [idPf, setIdPf] = useState()
+    const [descricao, setDescricao] = useState()
 
 
 
@@ -40,6 +42,7 @@ const ReqPF = () => {
     },[])
 
     const getMps = (pf) => {
+        setIdPf(pf)
         axios.post('http://localhost:8080/pf/catalogue/mp',
         {pf:`${pf}`})
         .then(res => {
@@ -57,6 +60,25 @@ const ReqPF = () => {
     const remMP = (mp) => {
         const newAdd = adds.filter((add) => add.id !== mp.id) 
         setAdds(newAdd)
+    }
+
+    const createOrder = () => {
+        
+        console.log('New Add: ', adds)
+        console.log('Descrição: ', descricao)
+        console.log('Produto final: ', idPf)
+
+        axios.post('http://localhost:8080/rc/create',
+        {codigo: `${8530}`,
+        pf: `${idPf}`,
+        mp: ["1234", "8516"],
+        descricao: `${descricao}`,
+        tipo: 'teste',
+        valor_compra: `${x}`,
+        valor_venda: `${x + 500}`,
+        quantidade: `${1}`
+        }).then(res => {})
+
     }
 
     /*mandar newAdd e o produto final selecionado 
@@ -172,14 +194,15 @@ const ReqPF = () => {
 
 
             <Form2>
-
-                <Input></Input>       
+                
+                <div>{descricao}</div>
+                <Input onChange={(e) => {setDescricao(e.target.value)} }></Input>       
                 
                 <ValorFinal>
 
                     <h3>valor final: {x}</h3>
                     
-                    <Button onClick={() => {console.log(valores)}}>Adicionar Ordem</Button>
+                    <Button type={'button'} onClick={() => {createOrder(idPf, adds, descricao, x )}}>Adicionar Ordem</Button>
                     
                 </ValorFinal>
 
