@@ -41,6 +41,16 @@ const ReqPF = () => {
         })
     },[])
 
+    const listAdds = (adds) => {
+        var x = []
+
+        adds.forEach(element => {
+            x.push(element.codigo)
+        });
+        return x
+
+    }
+
     const getMps = (pf) => {
         setIdPf(pf)
         axios.post('http://localhost:8080/pf/catalogue/mp',
@@ -69,9 +79,9 @@ const ReqPF = () => {
         console.log('Produto final: ', idPf)
 
         axios.post('http://localhost:8080/rc/create',
-        {codigo: `${8530}`,
+        {codigo: `${2223}`,
         pf: `${idPf}`,
-        mp: ["1234", "8516"],
+        mp: JSON.stringify(listAdds(adds)),
         descricao: `${descricao}`,
         tipo: 'teste',
         valor_compra: `${x}`,
@@ -86,6 +96,7 @@ const ReqPF = () => {
     var x = 0;
     return (
         <Container>
+            <button onClick={() => listAdds(adds)}>teste</button>
         <Form>
             <Title>
                 <h1>Wolfer</h1>

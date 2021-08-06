@@ -50,7 +50,7 @@ const Lista_pedidos = () => {
 
                                 <Data>
                                     
-                                    <TitleProduct>teste</TitleProduct>
+                                    <TitleProduct>{pedido.pf}</TitleProduct>
                                     
                                     <TableHeading>
                                         <Label>
